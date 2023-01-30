@@ -191,7 +191,7 @@ select {
 
 .grid-container {
 	text-align: center;
-	border: 5px solid green;
+
 	display: grid;
 	place-items: center;
 	padding-inline: 1rem;
@@ -213,12 +213,10 @@ select {
 
 	.grid-container > *:first-child {
 		grid-column: 2;
-		outline: 1px solid red;
 	}
 
 	.grid-container > *:last-child {
 		grid-column: 3;
-		outline: 1px solid yellow;
 	}
 
 	.grid-container--home {
@@ -228,11 +226,9 @@ select {
 }
 
 .grid-container > *:first-child {
-	outline: 1px solid red;
 }
 
 .grid-container > *:last-child {
-	outline: 1px solid yellow;
 }
 
 .sr-only {
@@ -386,11 +382,28 @@ div:first-child p {
 
 /* NAV */
 .primary-navigation {
-	--gap: 8rem;
 	--underline-gap: 2rem;
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+@media (max-width: 35rem) {
+	.primary-navigation {
+		--underline-gap: 1rem;
+		position: fixed;
+		z-index: 2;
+		inset: 0 0 0 30%;
+		background-color: black;
+		list-style: none;
+		padding: min(20rem, 15vh) 2rem;
+		margin: 0;
+		flex-direction: column;
+	}
+
+	.primary-navigation.underline-indicators > * {
+		border: 0;
+	}
 }
 
 .primary-navigation a {
