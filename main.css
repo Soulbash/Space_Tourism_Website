@@ -116,6 +116,8 @@ body {
 
 	display: grid;
 	grid-template-rows: min-content 1fr;
+
+	overflow-x: hidden;
 }
 
 /* MAKE IMAGES EASIER TO WORK WITH */
@@ -223,12 +225,6 @@ select {
 		padding-bottom: 6rem;
 		align-items: end;
 	}
-}
-
-.grid-container > *:first-child {
-}
-
-.grid-container > *:last-child {
 }
 
 .sr-only {
@@ -386,6 +382,23 @@ div:first-child p {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+
+	/* Background for browsers that don't support backdrop-filter */
+	background: hsl(var(--clr-dark) / 0.95);
+}
+
+/* Glassmorphism Effect */
+@supports (backdrop-filter: blur(1.5rem)) {
+	.primary-navigation {
+		background: hsl(var(--clr-white) / 0.05);
+		backdrop-filter: blur(1.5rem);
+		-webkit-backdrop-filter: blur(1.5rem);
+	}
+}
+/* End of Glassmorphism Effect */
+
+.mobile-nav-toggle {
+	display: none;
 }
 
 @media (max-width: 35rem) {
@@ -394,11 +407,40 @@ div:first-child p {
 		position: fixed;
 		z-index: 2;
 		inset: 0 0 0 30%;
-		background-color: black;
 		list-style: none;
 		padding: min(20rem, 15vh) 2rem;
 		margin: 0;
 		flex-direction: column;
+		transform: translateX(100%);
+		transition: transform 500ms ease-in-out;
+	}
+
+	.primary-navigation[data-visible="true"] {
+		transform: translateX(0);
+	}
+
+	.mobile-nav-toggle {
+		display: block;
+		position: absolute;
+		z-index: 2000;
+		right: 1rem;
+		top: 2rem;
+		background: transparent;
+		background-image: url(./assets/shared/icon-hamburger.svg);
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 1.5rem;
+		aspect-ratio: 1;
+		border: 0;
+	}
+
+	.mobile-nav-toggle[aria-expanded="true"] {
+		background-image: url(./assets/shared/icon-close.svg);
+	}
+
+	.mobile-nav-toggle:focus-visible {
+		outline: 5px solid white;
+		outline-offset: 5px;
 	}
 
 	.primary-navigation.underline-indicators > * {
