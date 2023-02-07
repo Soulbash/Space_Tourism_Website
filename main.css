@@ -203,7 +203,7 @@ select {
 	max-width: 50ch;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 48em) {
 	.grid-container {
 		text-align: left;
 		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
@@ -377,7 +377,19 @@ div:first-child p {
 }
 
 /* NAV */
+
+/* Primary Header */
+.logo {
+	margin: 1.5rem clamp(1rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+	justify-content: space-between;
+	align-items: center;
+}
+
 .primary-navigation {
+	--gap: clamp(1rem, 5vw, 3.5rem);
 	--underline-gap: 2rem;
 	list-style: none;
 	padding: 0;
@@ -396,6 +408,15 @@ div:first-child p {
 	}
 }
 /* End of Glassmorphism Effect */
+
+.primary-navigation a {
+	text-decoration: none;
+}
+
+.primary-navigation a > span {
+	margin-right: 0.5em;
+	font-weight: 700;
+}
 
 .mobile-nav-toggle {
 	display: none;
@@ -448,13 +469,21 @@ div:first-child p {
 	}
 }
 
-.primary-navigation a {
-	text-decoration: none;
+@media (min-width: 35em) and (max-width: 48em) {
+	.primary-navigation {
+		padding-inline: 3rem;
+	}
+
+	.primary-navigation a > span {
+		display: none;
+	}
 }
 
-.primary-navigation a > span {
-	margin-right: 0.5em;
-	font-weight: 700;
+@media (min-width: 48em) {
+	.primary-navigation {
+		margin-block: 2rem;
+		padding-inline: 7rem;
+	}
 }
 
 /* underline */
@@ -545,7 +574,7 @@ body {
 	}
 }
 
-@media (min-width: 45em) {
+@media (min-width: 48em) {
 	.home {
 		background-image: url(./assets/home/background-home-desktop.jpg);
 	}
