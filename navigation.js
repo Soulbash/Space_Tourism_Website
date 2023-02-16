@@ -1,6 +1,7 @@
 const nav = document.querySelector(".primary-navigation");
 const navToggle = document.querySelector(".mobile-nav-toggle");
 const aria = document.querySelector("aria-expanded");
+
 // When someone clicks the hambuger menu
 navToggle.addEventListener("click", () => {
 	const visiblity = nav.getAttribute("data-visible");
