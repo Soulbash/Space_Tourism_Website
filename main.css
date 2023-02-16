@@ -153,6 +153,10 @@ select {
 	}
 }
 
+[hidden] {
+	display: none !important;
+}
+
 /* ---------------------*/
 /* UTILITY CLASSES      */
 /* ---------------------*/
