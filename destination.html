@@ -149,7 +149,7 @@
 				<button
 					aria-selected="false"
 					role="tab"
-					aria-controls="europa"
+					aria-controls="europa-tab"
 					tabindex="-1"
 					class="uppercase ff-sans-cond text-blue letter-spacing-2"
 				>
@@ -158,7 +158,7 @@
 				<button
 					aria-selected="false"
 					role="tab"
-					aria-controls="titan"
+					aria-controls="titan-tab"
 					tabindex="-1"
 					class="uppercase ff-sans-cond text-blue letter-spacing-2"
 				>
@@ -167,7 +167,12 @@
 			</div>
 
 			<!-- The Moon -->
-			<article class="destination-info flow">
+			<article
+				class="destination-info flow"
+				id="moon-tab"
+				tabindex="0"
+				role="tabpanel"
+			>
 				<h2 class="fs-800 ff-serif uppercase">Moon</h2>
 
 				<p>
@@ -191,7 +196,13 @@
 			</article>
 
 			<!-- Mars -->
-			<article hidden class="destination-info flow">
+			<article
+				hidden
+				class="destination-info flow"
+				id="mars-tab"
+				tabindex="0"
+				role="tabpanel"
+			>
 				<h2 class="fs-800 ff-serif uppercase">Mars</h2>
 
 				<p>
@@ -214,7 +225,13 @@
 			</article>
 
 			<!-- Europa -->
-			<article hidden class="destination-info flow">
+			<article
+				hidden
+				class="destination-info flow"
+				id="europa-tab"
+				tabindex="0"
+				role="tabpanel"
+			>
 				<h2 class="fs-800 ff-serif uppercase">Europa</h2>
 
 				<p>
@@ -238,7 +255,13 @@
 			</article>
 
 			<!-- Titan -->
-			<article hidden class="destination-info flow">
+			<article
+				hidden
+				class="destination-info flow"
+				id="titan-tab"
+				tabindex="0"
+				role="tabpanel"
+			>
 				<h2 class="fs-800 ff-serif uppercase">Titan</h2>
 
 				<p>
