@@ -85,14 +85,14 @@
 				</h1>
 			</div>
 
-			<picture>
+			<picture id="moon-image">
 				<source
 					srcset="./assets/destination/image-moon.webp"
 					type="image/webp"
 				/>
 				<img src="./assets/destination/image-moon.png" alt="the moon" />
 			</picture>
-			<picture hidden>
+			<picture hidden id="mars-image">
 				<source
 					srcset="./assets/destination/image-mars.webp"
 					type="image/webp"
@@ -102,7 +102,7 @@
 					alt="the planet mars"
 				/>
 			</picture>
-			<picture hidden>
+			<picture hidden id="europa-image">
 				<source
 					srcset="./assets/destination/image-europa.webp"
 					type="image/webp"
@@ -112,7 +112,7 @@
 					alt="jupiter's moon europa"
 				/>
 			</picture>
-			<picture hidden>
+			<picture hidden id="titan-image">
 				<source
 					srcset="./assets/destination/image-titan.webp"
 					type="image/webp"
@@ -133,6 +133,7 @@
 					role="tab"
 					aria-controls="moon-tab"
 					tabindex="0"
+					data-image="moon-image"
 					class="uppercase ff-sans-cond text-blue letter-spacing-2"
 				>
 					Moon
@@ -142,6 +143,7 @@
 					role="tab"
 					aria-controls="mars-tab"
 					tabindex="-1"
+					data-image="mars-image"
 					class="uppercase ff-sans-cond text-blue letter-spacing-2"
 				>
 					Mars
@@ -151,6 +153,7 @@
 					role="tab"
 					aria-controls="europa-tab"
 					tabindex="-1"
+					data-image="europa-image"
 					class="uppercase ff-sans-cond text-blue letter-spacing-2"
 				>
 					Europa
@@ -160,6 +163,7 @@
 					role="tab"
 					aria-controls="titan-tab"
 					tabindex="-1"
+					data-image="titan-image"
 					class="uppercase ff-sans-cond text-blue letter-spacing-2"
 				>
 					Titan
