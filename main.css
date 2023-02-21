@@ -717,6 +717,31 @@ body {
 	opacity: 0.5;
 }
 
+/* technology layout */
+
+.grid-container--technology {
+	grid-template-areas:
+		"title"
+		"image"
+		"tabs"
+		"content";
+}
+
+.tech-details > p {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+
+.grid-container--technology > .numbers-indicators {
+	grid-area: tabs;
+}
+
+.grid-container--technology > .tech-details {
+	grid-area: content;
+}
+
+/* media queries */
+
 @media (min-width: 35em) {
 	.numbered-title {
 		justify-self: start;
@@ -737,8 +762,7 @@ body {
 			"image";
 	}
 }
-
-@media (min-width: 48em) {
+@media (width > 48em) {
 	.grid-container {
 		text-align: left;
 		grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
